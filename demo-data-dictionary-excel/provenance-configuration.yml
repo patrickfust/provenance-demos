@@ -1,0 +1,81 @@
+- className: dk.fust.provenance.generator.datadict.DataDictionaryConfiguration
+  provenanceFile: provenance.yml
+  tableFormatter:
+    className: dk.fust.provenance.destination.csv.format.table.CSVTableFormatter
+  destination:
+    className: dk.fust.provenance.destination.FileDestination
+    file: generated/data-dictionary.csv
+    createParentDirectories: true
+- className: dk.fust.provenance.generator.datadict.DataDictionaryConfiguration
+  provenanceFile: provenance.yml
+  key: DATA_DICTIONARY
+  columnExample:
+    export: true
+    alignment: RIGHT
+  columnMandatory:
+    alignment: CENTER
+  tableFormatter:
+    className: dk.fust.provenance.format.table.MarkdownTableFormatter
+  destination:
+    className: dk.fust.provenance.destination.MarkdownDestination
+    file: README.md
+- className: dk.fust.provenance.generator.datadict.DataDictionaryConfiguration
+  provenanceFile: provenance.yml
+  addDescriptionForFile: true
+  columnExample:
+    export: true
+    alignment: RIGHT
+  tableFormatter:
+    className: dk.fust.provenance.destination.excel.format.table.ExcelBase64TableFormatter
+    sheetName: Data Dictionary
+    headerExcelStyle:
+      fontName: Verdana
+      fontHeightInPoints: 11
+      fontColor: WHITE
+      bold: true
+      backgroundColor: 88, 88, 88
+    secondaryHeaderExcelStyle:
+      fontName: Verdana
+      fontHeightInPoints: 9
+      fontColor: WHITE
+      bold: true
+      backgroundColor: GREY_50_PERCENT
+    evenRowExcelStyle:
+      fontName: Verdana
+      fontHeightInPoints: 9
+      fontColor: BLACK
+      bold: false
+      backgroundColor: 220, 220, 220
+    oddRowExcelStyle:
+      fontName: Verdana
+      fontHeightInPoints: 9
+      fontColor: BLACK
+      bold: false
+      backgroundColor: 240, 240, 240
+    defaultColumnWidth: 50
+    columnCustomizations:
+      - className: dk.fust.provenance.destination.excel.format.table.model.ColumnCustomization
+        columnDescription: Filename
+        columnWidth: 20
+      - className: dk.fust.provenance.destination.excel.format.table.model.ColumnCustomization
+        columnDescription: Column
+        columnWidth: 12
+      - className: dk.fust.provenance.destination.excel.format.table.model.ColumnCustomization
+        columnDescription: Position
+        columnWidth: 12
+      - className: dk.fust.provenance.destination.excel.format.table.model.ColumnCustomization
+        columnDescription: Type
+        columnWidth: 14
+      - className: dk.fust.provenance.destination.excel.format.table.model.ColumnCustomization
+        columnDescription: Mandatory
+        columnWidth: 12
+  destination:
+    className: dk.fust.provenance.destination.Base64FileDestination
+    file: generated/data-dictionary.xlsx
+- className: dk.fust.provenance.generator.datadict.DataDictionaryMetaInfoConfiguration
+  provenanceFile: provenance.yml
+  tableFormatter:
+    className: dk.fust.provenance.format.table.JsonTableFormatter
+  destination:
+    className: dk.fust.provenance.destination.FileDestination
+    file: generated/data-dictionary-meta-info.json

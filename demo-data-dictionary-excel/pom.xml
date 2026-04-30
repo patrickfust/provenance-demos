@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <name>demo-data-dictionary-excel</name>
+    <description>Generating a data dictionary to csv and Excel</description>
+
+    <groupId>dk.fust.provenance.demo</groupId>
+    <artifactId>demo-data-dictionary-excel</artifactId>
+    <version>0.0.1</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <provenance.version>1.0.0</provenance.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>dk.fust.provenance</groupId>
+                <artifactId>provenance-maven-plugin</artifactId>
+                <version>${provenance.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>dk.fust.provenance</groupId>
+                        <artifactId>provenance-generator-data-dictionary</artifactId>
+                        <version>${provenance.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>dk.fust.provenance</groupId>
+                        <artifactId>provenance-destination-csv</artifactId>
+                        <version>${provenance.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>dk.fust.provenance</groupId>
+                        <artifactId>provenance-destination-excel</artifactId>
+                        <version>${provenance.version}</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <provenanceConfigurationFile>provenance-configuration.yml</provenanceConfigurationFile>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

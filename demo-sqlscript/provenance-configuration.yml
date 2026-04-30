@@ -1,0 +1,6 @@
+- className: dk.fust.provenance.generator.sqlscript.SqlScriptConfiguration
+  provenanceFile: provenance.yml
+  destination:
+    className: dk.fust.provenance.destination.DirectoryDestination
+    directory: generated
+    createParentDirectories: true

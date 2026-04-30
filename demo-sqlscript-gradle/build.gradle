@@ -1,0 +1,37 @@
+import dk.fust.provenance.gradle.ProvenanceGeneratorPlugin
+import dk.fust.provenance.generator.sqlscript.SqlScriptConfiguration
+import dk.fust.provenance.destination.DirectoryDestination
+
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("dk.fust.provenance:provenance-gradle-plugin:${provenanceVersion}")
+        classpath("dk.fust.provenance:provenance-generator-sql-script:${provenanceVersion}")
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+apply plugin: ProvenanceGeneratorPlugin
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+provenanceGenerator {
+    generatorConfigurations = [
+            new SqlScriptConfiguration(
+                    provenanceFile: new File(projectDir, 'provenance.yaml'),
+                    destination: new DirectoryDestination(
+                            directory: new File('generated'),
+                            createParentDirectories: true
+                    )
+            )
+    ]
+}
