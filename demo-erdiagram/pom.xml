@@ -2,10 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <name>demo-sqlscript</name>
+    <name>demo-erdiagram</name>
+    <description>Generating E/R diagrams in Mermaid documents</description>
 
     <groupId>dk.fust.provenance.demo</groupId>
-    <artifactId>demo-sqlscript</artifactId>
+    <artifactId>demo-erdiagram</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
 
@@ -22,7 +23,7 @@
                 <dependencies>
                     <dependency>
                         <groupId>dk.fust.provenance</groupId>
-                        <artifactId>provenance-generator-sql-script</artifactId>
+                        <artifactId>provenance-generator-erdiagram</artifactId>
                         <version>${provenance.version}</version>
                     </dependency>
                 </dependencies>

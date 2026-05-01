@@ -1,0 +1,12 @@
+- className: dk.fust.provenance.generator.erdiagram.ERDiagramConfiguration
+  provenanceFile: provenance.yml
+  umlGenerator: MERMAID
+  generateKeys:
+    - className: dk.fust.provenance.generator.erdiagram.GenerateKey
+      destinationKey: MODEL_MERMAID_PLACEHOLDER
+    - className: dk.fust.provenance.generator.erdiagram.GenerateKey
+      destinationKey: MODEL_MERMAID_GROUP_PLACEHOLDER
+      filterTags: my_group
+  destination:
+    className: dk.fust.provenance.destination.MarkdownDestination
+    file: README.md

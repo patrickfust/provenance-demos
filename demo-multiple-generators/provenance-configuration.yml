@@ -1,0 +1,34 @@
+- className: dk.fust.provenance.generator.datadict.DataDictionaryConfiguration
+  provenanceFile: provenance.yml
+  tableFormatter:
+    className: dk.fust.provenance.destination.csv.format.table.CSVTableFormatter
+  destination:
+    className: dk.fust.provenance.destination.FileDestination
+    file: generated/data-dictionary.csv
+    createParentDirectories: true
+- className: dk.fust.provenance.generator.datadict.DataDictionaryConfiguration
+  provenanceFile: provenance.yml
+  key: DATA_DICTIONARY
+  columnExample:
+    export: true
+    alignment: RIGHT
+  columnMandatory:
+    alignment: CENTER
+  tableFormatter:
+    className: dk.fust.provenance.format.table.MarkdownTableFormatter
+  destination:
+    className: dk.fust.provenance.destination.MarkdownDestination
+    file: README.md
+- className: dk.fust.provenance.generator.datadict.DataDictionaryMetaInfoConfiguration
+  provenanceFile: provenance.yml
+  tableFormatter:
+    className: dk.fust.provenance.format.table.JsonTableFormatter
+  destination:
+    className: dk.fust.provenance.destination.FileDestination
+    file: generated/data-dictionary-meta-info.json
+- className: dk.fust.provenance.generator.sqlscript.SqlScriptConfiguration
+  provenanceFile: provenance.yml
+  destination:
+    className: dk.fust.provenance.destination.DirectoryDestination
+    directory: generated
+    createParentDirectories: true
