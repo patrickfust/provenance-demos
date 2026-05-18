@@ -1,4 +1,4 @@
-# Demo of the documentation generator
+# Demo of Provenance
 
 ## ER diagram
 

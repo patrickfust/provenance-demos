@@ -1,5 +1,5 @@
-$schema:  https://patrickfust.github.io/documentation-generator/v5/documentation-schema.json
-documentationTitle: My database
+$schema:  https://patrickfust.github.io/provenance/v1/provenance-schema.json
+provenanceTitle: My database
 schemaName: theSchema
 dataDictionary:
   dataDictionaryFiles:
