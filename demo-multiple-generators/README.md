@@ -1,7 +1,7 @@
 # Demo of Data Dictionary
 
 Generates a data dictionary and places it in the `generated` folder.
-Furthermore, will the table in [Data Dictionary that will be rewritten](#data-dictionary-that-will-be-rewritten) will we updated when generating provenance.  
+Furthermore, will the table in [Data Dictionary that will be rewritten](#data-dictionary-that-will-be-rewritten) be updated when generating provenance.  
 
 ```shell
 mvn provenance:generate
