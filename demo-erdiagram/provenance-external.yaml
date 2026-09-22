@@ -1,0 +1,7 @@
+$schema: ../../../../provenance-api/src/main/resources/provenance-schema.json
+schemaName: external
+tables:
+  - name: external_table
+    fields:
+      - name: code
+        dataType: int
