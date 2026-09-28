@@ -11,11 +11,33 @@
     className: dk.fust.provenance.destination.MarkdownDestination
     file: README.md
 - className: dk.fust.provenance.generator.erdiagram.ERDiagramConfiguration
+  provenanceFile: provenance-with-external-tables.yaml
+  externalProvenanceFiles:
+    - provenance-external.yaml
+  umlGenerator: MERMAID
+  generateKeys:
+    - className: dk.fust.provenance.generator.erdiagram.GenerateKey
+      destinationKey: MODEL_MERMAID_EXTERNAL_PLACEHOLDER
+  destination:
+    className: dk.fust.provenance.destination.MarkdownDestination
+    file: README.md
+- className: dk.fust.provenance.generator.erdiagram.ERDiagramConfiguration
   provenanceFile: provenance.yaml
   umlGenerator : PLANTUML
   generateKeys:
     - className: dk.fust.provenance.generator.erdiagram.GenerateKey
       destinationKey: MODEL_PLANTUML_PLACEHOLDER
+  destination:
+    className: dk.fust.provenance.destination.MarkdownDestination
+    file: README.md
+- className: dk.fust.provenance.generator.erdiagram.ERDiagramConfiguration
+  provenanceFile: provenance-with-external-tables.yaml
+  externalProvenanceFiles:
+    - provenance-external.yaml
+  umlGenerator : PLANTUML
+  generateKeys:
+    - className: dk.fust.provenance.generator.erdiagram.GenerateKey
+      destinationKey: MODEL_PLANTUML_EXTERNAL_PLACEHOLDER
   destination:
     className: dk.fust.provenance.destination.MarkdownDestination
     file: README.md
