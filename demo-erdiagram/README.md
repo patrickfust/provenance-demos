@@ -25,6 +25,8 @@ table_b {
 }
 table_in_group {
     INT field_b
+    INT[] array_field
+    JSONB jsonb_field
 }
 
 ```
@@ -40,6 +42,8 @@ erDiagram
     classDef externalRef stroke-dasharray: 1 1;
 table_in_group {
     INT field_b
+    INT[] array_field
+    JSONB jsonb_field
 }
 
 ```
@@ -106,6 +110,8 @@ $schema("theSchema") {
   }
   $table("table_in_group") {
     $column("field_b"): int
+    $column("array_field"): int[]
+    $column("jsonb_field"): jsonb
   }
 }
 theSchema.table_b::field_b ||--o{ theSchema.table_a::field_a

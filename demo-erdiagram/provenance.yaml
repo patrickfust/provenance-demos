@@ -1,4 +1,4 @@
-$schema:  https://patrickfust.github.io/provenance/v1/provenance-schema.json
+$schema:  https://patrickfust.github.io/provenance/v2/provenance-schema.json
 provenanceTitle: My database
 schemaName: theSchema
 tables:
@@ -20,3 +20,7 @@ tables:
     fields:
       - name: field_b
         dataType: int
+      - name: array_field
+        dataType: int_array
+      - name: jsonb_field
+        dataType: jsonb
