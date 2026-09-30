@@ -1,4 +1,4 @@
-$schema:  https://patrickfust.github.io/provenance/v1/provenance-schema.json
+$schema:  https://patrickfust.github.io/provenance/v2/provenance-schema.json
 provenanceTitle: My database
 schemaName: theSchema
 tables:
@@ -35,3 +35,7 @@ tables:
       - name: field_with_collate
         dataType: text
         collate: C
+      - name: array_field
+        dataType: int_array
+      - name: jsonb_field
+        dataType: jsonb
