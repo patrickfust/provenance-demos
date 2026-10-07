@@ -17,3 +17,9 @@ echo "[INFO] Updating pom.xml's..."
 find "$(cd "$(dirname "$0")" && pwd)" -name pom.xml -type f -exec \
     perl -0pi -e 's|<provenance\.version>[^<]+</provenance\.version>|<provenance.version>'"$NEW_VERSION"'</provenance.version>|g' {} +
 echo "[INFO] Successfully updated pom.xml files"
+
+echo "[INFO] Updating gradle.properties files..."
+find "$(cd "$(dirname "$0")" && pwd)" -name gradle.properties -type f -exec \
+    perl -0pi -e 's|provenanceVersion = [^\\n]+|provenanceVersion = '"$NEW_VERSION"'|g' {} +
+echo "[INFO] Successfully updated gradle.properties files"
+
